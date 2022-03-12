@@ -11,8 +11,10 @@ public class User {
   @GeneratedValue(strategy=GenerationType.AUTO)
   private Integer id;
   private String name;
-  private String email;
+  private String ccBrand;
   private String ccNum;
+  private String ccExpiration;
+  private String ccSecCode;
 
   public Integer getId() {
     return id;
@@ -30,12 +32,12 @@ public class User {
     this.name = name;
   }
 
-  public String getEmail() {
-    return email;
+  public String getCCBrand() {
+    return ccBrand;
   }
 
-  public void setEmail(String email) {
-    this.email = email;
+  public void setCCBrand(String ccBrand) {
+    this.ccBrand = ccBrand;
   }
 
   public String getCCNum() {
@@ -45,4 +47,21 @@ public class User {
   public void setCCNum(String ccNum) {
     this.ccNum = ccNum;
   }
+
+  public String getCCExpiration() {
+    return ccExpiration;
+  }
+
+  public void setCCExpiration(String ccExpiration) {
+    this.ccExpiration = ccExpiration;
+  }
+
+  public String getCCSecCode() {
+    return ccSecCode;
+  }
+
+  public void setCCSecCode(String ccSecCode) {
+    this.ccSecCode = ccSecCode;
+  }
+
 }
