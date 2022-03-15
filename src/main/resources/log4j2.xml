@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%style{%t}{normal,red}] %highlight{%-5level } %style{%logger{36}}{bright,blue} %X - %msg %throwable%n</Pattern>
+            </PatternLayout>
+        </Console>
+        <Async name="AsyncConsole">
+            <AppenderRef ref="Console"/>
+        </Async>
+        <File name="LogToFile" fileName="logs/application.log">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.cit_562.final_project" level="debug" additivity="false">
+            <AppenderRef ref="AsyncConsole"/>
+            <AppenderRef ref="LogToFile"/>
+        </Logger>
+        <Logger name="org.springframework.boot" level="error" additivity="false">
+            <AppenderRef ref="AsyncConsole"/>
+        </Logger>
+        <Root level="error">
+            <AppenderRef ref="AsyncConsole"/>
+            <AppenderRef ref="LogToFile"/>
+        </Root>
+    </Loggers>
+</Configuration>

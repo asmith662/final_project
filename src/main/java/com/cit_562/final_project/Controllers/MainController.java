@@ -10,11 +10,11 @@ import org.apache.logging.log4j.Logger;
 @RestController
 public class MainController {
 
-    private static final Logger logger = LogManager.getLogger("Logger Reporting...");
+    private static final Logger LOGGER = LogManager.getLogger("Logger Reporting...");
 
     @GetMapping("/")
     public String index(@RequestHeader("X-Api-Version") String apiVersion) {
-        logger.info("Received a request for API version " + apiVersion);
+        LOGGER.info("Received a request for API version " + apiVersion);
         return "Application Base Path";
     }
 
