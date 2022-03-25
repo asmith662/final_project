@@ -39,8 +39,8 @@ public class UserController {
     user.setCCExpiration(ccExpiration);
     user.setCCSecCode(ccSecCode);
     userRepository.save(user);
-    LOGGER.debug("Added User: {}", user.getName());
-    return "Saved";
+    LOGGER.info("Added User: {}", user.getName());
+    return user.getName() + " saved to database";
   }
 
   @GetMapping(path="/all")
